@@ -1,0 +1,1778 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #073b79 0%,
+            #031b3d 35%,
+            #010b1c 75%,
+            #00040a 100%
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   CORAZONES FLOTANTES
+========================= */
+
+.corazones span {
+
+    position: fixed;
+
+    font-size: 20px;
+
+    opacity: 0.25;
+
+    animation:
+        flotarCorazon
+        6s
+        infinite
+        ease-in-out;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.corazones span:nth-child(1) {
+    left: 8%;
+    top: 15%;
+}
+
+
+.corazones span:nth-child(2) {
+    left: 85%;
+    top: 20%;
+    animation-delay: 1s;
+}
+
+
+.corazones span:nth-child(3) {
+    left: 15%;
+    top: 70%;
+    animation-delay: 2s;
+}
+
+
+.corazones span:nth-child(4) {
+    left: 90%;
+    top: 65%;
+    animation-delay: 3s;
+}
+
+
+.corazones span:nth-child(5) {
+    left: 50%;
+    top: 10%;
+    animation-delay: 4s;
+}
+
+
+.corazones span:nth-child(6) {
+    left: 70%;
+    top: 80%;
+    animation-delay: 5s;
+}
+
+
+@keyframes flotarCorazon {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(10deg);
+    }
+}
+
+
+/* =========================
+   BIENVENIDA
+========================= */
+
+.bienvenida {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+.sobre {
+
+    width: 100%;
+    max-width: 500px;
+
+    padding: 55px 35px;
+
+    text-align: center;
+
+    border: 1px solid
+        rgba(65, 160, 255, 0.35);
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(7, 48, 95, 0.92),
+            rgba(1, 15, 34, 0.97)
+        );
+
+    box-shadow:
+        0 30px 80px
+        rgba(0, 0, 0, 0.65),
+
+        0 0 50px
+        rgba(0, 110, 255, 0.15);
+
+    animation:
+        aparecer
+        1s
+        ease;
+}
+
+
+.mini-corazon {
+
+    font-size: 65px;
+
+    margin-bottom: 20px;
+
+    animation:
+        latido
+        1.5s
+        infinite;
+}
+
+
+.pequeno {
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    color: #71baff;
+
+    margin-bottom: 15px;
+}
+
+
+.sobre h1 {
+
+    font-size: 55px;
+
+    line-height: 0.95;
+
+    margin-bottom: 25px;
+}
+
+
+.sobre h1 span {
+
+    color: #ff7a18;
+
+    text-shadow:
+        0 0 20px
+        rgba(255, 122, 24, 0.4);
+}
+
+
+.descripcion {
+
+    color: #d5e9ff;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+
+    margin-bottom: 30px;
+}
+
+
+button {
+
+    border: none;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    padding: 15px 28px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff7a18,
+            #ff4d00
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(255, 94, 0, 0.35);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+
+button:hover {
+
+    transform: translateY(-4px)
+               scale(1.03);
+
+    box-shadow:
+        0 15px 35px
+        rgba(255, 94, 0, 0.5);
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.contenido {
+
+    display: none;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding:
+        70px
+        25px
+        50px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.encabezado {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+
+.etiqueta {
+
+    display: inline-block;
+
+    padding: 8px 17px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: #ff8a32;
+
+    border: 1px solid
+        rgba(255, 122, 24, 0.4);
+
+    background:
+        rgba(255, 122, 24, 0.08);
+
+    margin-bottom: 20px;
+}
+
+
+.encabezado h2 {
+
+    font-size: clamp(
+        38px,
+        7vw,
+        65px
+    );
+
+    line-height: 1;
+
+    margin-bottom: 20px;
+
+    color: white;
+}
+
+
+.encabezado p {
+
+    color: #a9d5ff;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+.encabezado strong {
+
+    color: #ff8533;
+}
+
+
+/* =========================
+   RAMO
+========================= */
+
+.ramo {
+
+    min-height: 480px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    gap: 30px;
+
+    position: relative;
+
+    padding-bottom: 50px;
+}
+
+
+/* Papel del ramo */
+
+.envoltura {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 330px;
+
+    height: 180px;
+
+    z-index: -1;
+}
+
+
+.papel {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    bottom: 0;
+
+    border-radius:
+        20px
+        20px
+        60px
+        60px;
+
+    transform-origin: bottom;
+}
+
+
+.papel-1 {
+
+    background:
+        linear-gradient(
+            145deg,
+            #083f7f,
+            #021c3d
+        );
+
+    transform:
+        rotate(-15deg);
+}
+
+
+.papel-2 {
+
+    background:
+        linear-gradient(
+            145deg,
+            #0757aa,
+            #03234b
+        );
+
+    transform:
+        rotate(15deg);
+}
+
+
+.papel-3 {
+
+    background:
+        linear-gradient(
+            145deg,
+            #061f40,
+            #010d20
+        );
+
+    transform:
+        rotate(0);
+}
+
+
+/* Moño */
+
+.moño {
+
+    position: absolute;
+
+    bottom: 5px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.lazo {
+
+    width: 80px;
+
+    height: 55px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0c6dcc,
+            #034184
+        );
+
+    border:
+        2px solid
+        #258cf0;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.5);
+}
+
+
+.lazo.izquierdo {
+
+    border-radius:
+        60px
+        10px
+        60px
+        10px;
+
+    transform:
+        rotate(20deg);
+}
+
+
+.lazo.derecho {
+
+    border-radius:
+        10px
+        60px
+        10px
+        60px;
+
+    transform:
+        rotate(-20deg);
+}
+
+
+.centro-moño {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ff7417;
+
+    z-index: 3;
+}
+
+
+/* =========================
+   TALLOS
+========================= */
+
+.flor {
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+.flor-1 {
+    transform: rotate(-7deg);
+}
+
+
+.flor-2 {
+    transform: translateY(-45px);
+}
+
+
+.flor-3 {
+    transform: rotate(7deg);
+}
+
+
+.tallo {
+
+    position: absolute;
+
+    height: 150px;
+
+    width: 5px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #2da65b,
+            #126334
+        );
+
+    bottom: -80px;
+
+    left: 50%;
+
+    z-index: -1;
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+.tarjeta {
+
+    width: 210px;
+
+    height: 285px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+}
+
+
+.cara {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 25px;
+
+    padding: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    backface-visibility: hidden;
+
+    transition:
+        transform 0.8s
+        cubic-bezier(
+            0.68,
+            -0.55,
+            0.27,
+            1.55
+        );
+
+    border: 1px solid
+        rgba(64, 169, 255, 0.5);
+
+    box-shadow:
+        0 20px 40px
+        rgba(0, 0, 0, 0.5);
+}
+
+
+.frente {
+
+    background:
+        linear-gradient(
+            145deg,
+            #063b78,
+            #02172f
+        );
+
+    transform:
+        rotateY(0deg);
+}
+
+
+.atras {
+
+    background:
+        linear-gradient(
+            145deg,
+            #092a51,
+            #020e1f
+        );
+
+    transform:
+        rotateY(180deg);
+
+    border-color:
+        rgba(255, 122, 24, 0.5);
+}
+
+
+.tarjeta.volteada .frente {
+
+    transform:
+        rotateY(-180deg);
+}
+
+
+.tarjeta.volteada .atras {
+
+    transform:
+        rotateY(0deg);
+}
+
+
+.tarjeta:hover {
+
+    transform:
+        translateY(-10px);
+}
+
+
+/* Marca */
+
+.marca {
+
+    position: absolute;
+
+    top: 13px;
+
+    left: 15px;
+
+    color: #ff7620;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    font-style: italic;
+
+    letter-spacing: -0.5px;
+
+    text-shadow:
+        1px 1px #000;
+}
+
+
+.numero {
+
+    position: absolute;
+
+    top: 13px;
+
+    right: 15px;
+
+    font-size: 11px;
+
+    color: #6ebcff;
+}
+
+
+/* =========================
+   CARRO CSS
+========================= */
+
+.carrito {
+
+    width: 145px;
+
+    height: 90px;
+
+    position: relative;
+
+    margin-bottom: 20px;
+
+    filter:
+        drop-shadow(
+            0 12px 10px
+            rgba(0, 0, 0, 0.5)
+        );
+
+    animation:
+        autoFlotante
+        2.5s
+        ease-in-out
+        infinite;
+}
+
+
+.carro-cuerpo {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 10px;
+
+    width: 125px;
+
+    height: 42px;
+
+    border-radius:
+        30px
+        35px
+        15px
+        12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2b9cff,
+            #0053a6
+        );
+
+    border:
+        2px solid
+        rgba(255,255,255,0.4);
+}
+
+
+.naranja .carro-cuerpo {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9a3c,
+            #e74700
+        );
+}
+
+
+.amarillo .carro-cuerpo {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe95b,
+            #e89b00
+        );
+}
+
+
+.vidrio {
+
+    position: absolute;
+
+    bottom: 58px;
+
+    left: 47px;
+
+    width: 50px;
+
+    height: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #bfeaff,
+            #23689b
+        );
+
+    clip-path:
+        polygon(
+            15% 100%,
+            30% 0,
+            75% 0,
+            100% 100%
+        );
+
+    border: 2px solid #fff;
+}
+
+
+.rueda {
+
+    position: absolute;
+
+    bottom: 9px;
+
+    width: 32px;
+
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: #050505;
+
+    border: 5px solid #202020;
+
+    box-shadow:
+        inset 0 0 0 4px #666;
+}
+
+
+.rueda-1 {
+    left: 25px;
+}
+
+
+.rueda-2 {
+    right: 22px;
+}
+
+
+.tarjeta h3 {
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+.tarjeta .frente p {
+
+    color: #8ccaff;
+
+    font-size: 12px;
+}
+
+
+.corazoncito {
+
+    margin-top: 10px;
+
+    font-size: 18px;
+}
+
+
+/* Reverso */
+
+.icono-regalo {
+
+    font-size: 55px;
+
+    margin-bottom: 12px;
+}
+
+
+.atras h3 {
+
+    color: #ff8634;
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+
+.atras p {
+
+    color: #d8ebff;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+.atras span {
+
+    color: #58aaff;
+
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+@keyframes autoFlotante {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-7px);
+    }
+}
+
+
+/* =========================
+   INDICACIÓN
+========================= */
+
+.indicacion {
+
+    text-align: center;
+
+    margin-top: 30px;
+
+    padding: 15px;
+
+    color: #7fc2ff;
+
+    font-size: 14px;
+
+    letter-spacing: 0.5px;
+}
+
+
+.indicacion span {
+
+    color: #ff7922;
+
+    font-size: 20px;
+
+    margin: 0 10px;
+}
+
+
+/* =========================
+   FRASE
+========================= */
+
+.frase {
+
+    max-width: 600px;
+
+    margin:
+        70px
+        auto;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border-left:
+        3px solid
+        #ff7417;
+
+    border-right:
+        3px solid
+        #1c8cff;
+
+    background:
+        rgba(5, 35, 70, 0.45);
+
+    border-radius: 20px;
+}
+
+
+.frase-decoracion {
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+
+.frase p {
+
+    color: #b8ddff;
+
+    margin-bottom: 8px;
+
+    font-size: 17px;
+}
+
+
+.frase strong {
+
+    color: #ff8130;
+
+    font-size: 22px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   MENSAJE
+========================= */
+
+.mensaje {
+
+    max-width: 700px;
+
+    margin:
+        0 auto
+        50px;
+
+    padding: 50px 35px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(5, 45, 88, 0.9),
+            rgba(2, 17, 35, 0.95)
+        );
+
+    border:
+        1px solid
+        rgba(56, 153, 255, 0.4);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.4);
+}
+
+
+.borde-corazon {
+
+    font-size: 38px;
+
+    margin-bottom: 15px;
+
+    animation:
+        latido
+        1.5s
+        infinite;
+}
+
+
+.para {
+
+    color: #79bfff;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+}
+
+
+.mensaje h2 {
+
+    color: #ff8130;
+
+    font-size: 38px;
+
+    margin: 8px 0 20px;
+}
+
+
+.linea {
+
+    width: 80px;
+
+    height: 2px;
+
+    margin:
+        0 auto
+        25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #187ee1,
+            #ff751c
+        );
+}
+
+
+.texto-mensaje {
+
+    color: #d8ebff;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+}
+
+
+.firma {
+
+    margin-top: 30px;
+
+    color: #83bff1;
+
+    font-style: italic;
+}
+
+
+.firma strong {
+
+    display: block;
+
+    color: #ff8130;
+
+    font-size: 20px;
+
+    margin-top: 8px;
+}
+
+
+/* =========================
+   BOTÓN FINAL
+========================= */
+
+.boton-final {
+
+    display: block;
+
+    margin:
+        0 auto
+        25px;
+}
+
+
+.finalito {
+
+    text-align: center;
+
+    color: #5d8bb9;
+
+    font-size: 12px;
+
+    margin-bottom: 30px;
+}
+
+
+.finalito strong {
+
+    color: #ff7620;
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes latido {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.15);
+    }
+}
+
+
+/* =========================
+   CORAZONES DEL FINAL
+========================= */
+
+.corazon-final {
+
+    position: fixed;
+
+    bottom: -30px;
+
+    font-size: 25px;
+
+    pointer-events: none;
+
+    z-index: 100;
+
+    animation:
+        subirCorazon
+        4s
+        linear
+        forwards;
+}
+
+
+@keyframes subirCorazon {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateY(-100vh)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 800px) {
+
+    .contenido {
+
+        padding-top: 45px;
+    }
+
+
+    .ramo {
+
+        min-height: auto;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 35px;
+
+        padding-bottom: 120px;
+    }
+
+
+    .flor-1,
+    .flor-2,
+    .flor-3 {
+
+        transform: none;
+    }
+
+
+    .flor-2 {
+
+        order: -1;
+    }
+
+
+    .envoltura {
+
+        bottom: 20px;
+    }
+
+
+    .tallo {
+
+        display: none;
+    }
+
+
+    .indicacion {
+
+        margin-top: -70px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .sobre {
+
+        padding: 45px 25px;
+    }
+
+
+    .sobre h1 {
+
+        font-size: 45px;
+    }
+
+
+    .encabezado h2 {
+
+        font-size: 42px;
+    }
+
+
+    .encabezado p {
+
+        font-size: 16px;
+    }
+
+
+    .tarjeta {
+
+        width: 230px;
+
+        height: 300px;
+    }
+
+
+    .mensaje {
+
+        padding: 40px 25px;
+    }
+
+
+    .mensaje h2 {
+
+        font-size: 32px;
+    }
+
+
+    .texto-mensaje {
+
+        font-size: 15px;
+    }
+
+
+}.imagen-carrito {
+    width: 165px;
+    height: 110px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+
+    filter: drop-shadow(
+        0 10px 8px
+        rgba(0, 0, 0, 0.5)
+    );
+
+    animation:
+        autoFlotante
+        2.5s
+        ease-in-out
+        infinite;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.tarjeta:hover .imagen-carrito {
+    transform: scale(1.08);
+}
+
+/* =========================================
+   ORGANIZACIÓN DEL RAMO
+   ========================================= */
+
+.ramo {
+    position: relative;
+
+    width: 700px;
+    max-width: 95%;
+
+    height: 590px;
+
+    margin: 60px auto 20px;
+
+    display: block;
+}
+
+
+/* =========================================
+   TARJETA 01
+   ========================================= */
+
+.flor {
+    position: absolute;
+
+    width: 220px;
+
+    z-index: 5;
+}
+
+.flor-1 {
+    top: 10px;
+    left: 75px;
+
+    transform: rotate(-7deg);
+}
+
+
+/* =========================================
+   TARJETA 02
+   ========================================= */
+
+.flor-2 {
+    top: 10px;
+    right: 75px;
+
+    transform: rotate(7deg);
+}
+
+
+/* =========================================
+   TARJETA 03
+   ========================================= */
+
+.flor-3 {
+    top: 190px;
+    left: 240px;
+
+    transform: rotate(-2deg);
+
+    z-index: 10;
+}
+
+
+/* =========================================
+   TALLOS
+   ========================================= */
+
+.flor .tallo {
+    position: absolute;
+
+    width: 5px;
+    height: 225px;
+
+    left: 50%;
+    top: 255px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #3fa866,
+            #174d32
+        );
+
+    border-radius: 10px;
+
+    transform-origin: top;
+
+    z-index: -1;
+}
+
+
+/* Tallo del carro 01 */
+
+.flor-1 .tallo {
+    transform: rotate(25deg);
+}
+
+
+/* Tallo del carro 02 */
+
+.flor-2 .tallo {
+    transform: rotate(-25deg);
+}
+
+
+/* Tallo del carro 03 */
+
+.flor-3 .tallo {
+    transform: rotate(3deg);
+}
+
+
+/* =========================================
+   PAPEL DEL RAMO
+   ========================================= */
+
+.envoltura {
+    position: absolute;
+
+    width: 340px;
+    height: 180px;
+
+    left: 180px;
+    top: 385px;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   MOÑO
+   ========================================= */
+
+.moño {
+    position: absolute;
+
+    left: 50%;
+    top: 125px;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+}
+
+
+/* =========================================
+   IMÁGENES DE LOS HOT WHEELS
+   ========================================= */
+
+.imagen-carrito {
+    width: 165px;
+    height: 110px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+
+    filter: drop-shadow(
+        0 10px 8px
+        rgba(0, 0, 0, 0.5)
+    );
+
+    animation:
+        autoFlotante
+        2.5s
+        ease-in-out
+        infinite;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.tarjeta:hover .imagen-carrito {
+    transform: scale(1.08);
+}
+
+/* =========================================
+   AJUSTE FINAL DEL RAMO
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .ramo {
+        position: relative !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: 650px !important;
+
+        margin: 30px auto 20px !important;
+    }
+
+    /* CARRO 01 */
+
+    .flor-1 {
+        position: absolute !important;
+
+        top: 0 !important;
+        left: 20px !important;
+
+        width: 200px !important;
+
+        transform: rotate(-6deg) !important;
+
+        z-index: 5 !important;
+    }
+
+
+    /* CARRO 02 */
+
+    .flor-2 {
+        position: absolute !important;
+
+        top: 0 !important;
+        right: 20px !important;
+
+        width: 200px !important;
+
+        transform: rotate(6deg) !important;
+
+        z-index: 5 !important;
+    }
+
+
+    /* CARRO 03 */
+
+    .flor-3 {
+        position: absolute !important;
+
+        top: 205px !important;
+        left: 50% !important;
+
+        width: 200px !important;
+
+        transform:
+            translateX(-50%)
+            rotate(-2deg) !important;
+
+        z-index: 10 !important;
+    }
+
+
+    /* =================================
+       TALLOS
+       ================================= */
+
+    .flor .tallo {
+        position: absolute !important;
+
+        top: 250px !important;
+
+        height: 210px !important;
+
+        width: 5px !important;
+
+        left: 50% !important;
+
+        z-index: -1 !important;
+    }
+
+
+    .flor-1 .tallo {
+        transform: rotate(22deg) !important;
+    }
+
+    .flor-2 .tallo {
+        transform: rotate(-22deg) !important;
+    }
+
+    .flor-3 .tallo {
+        transform: rotate(0deg) !important;
+    }
+
+
+    /* =================================
+       ENVOLTURA DEL RAMO
+       ================================= */
+
+    .envoltura {
+        position: absolute !important;
+
+        width: 300px !important;
+        height: 180px !important;
+
+        left: 50% !important;
+
+        top: 390px !important;
+
+        transform:
+            translateX(-50%) !important;
+
+        z-index: 1 !important;
+
+        pointer-events: none !important;
+    }
+
+
+    /* =================================
+       MOÑO
+       ================================= */
+
+    .moño {
+        position: absolute !important;
+
+        left: 50% !important;
+
+        top: 115px !important;
+
+        transform:
+            translateX(-50%) !important;
+
+        z-index: 30 !important;
+    }
+
+
+    /* =================================
+       CARROS
+       ================================= */
+
+    .imagen-carrito {
+        width: 140px !important;
+        height: 90px !important;
+
+        object-fit: contain !important;
+    }
+
+}
